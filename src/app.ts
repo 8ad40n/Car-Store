@@ -1,13 +1,12 @@
 import cors from 'cors';
-import express, { Application, Request, Response } from 'express';
+import express, { Application } from 'express';
+import { CarRoutes } from './app/modules/car/car.route';
 const app: Application = express();
 
 // parsers
 app.use(express.json());
 app.use(cors());
 
-app.get('/', (req:Request, res:Response) => {
-  res.send('Hello World!')
-})
+app.use("/api", CarRoutes)
 
 export default app;

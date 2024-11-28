@@ -2,11 +2,6 @@ import { model, Schema } from "mongoose";
 import { Car } from "./car.interface";
 
 const carSchema = new Schema<Car>({
-  id: {
-    type: String,
-    required: [true, "The car ID is required."],
-    unique: true,
-  },
   brand: {
     type: String,
     required: [true, "The car brand is required."],
