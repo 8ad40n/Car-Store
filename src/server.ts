@@ -1,6 +1,7 @@
 import app from "./app";
+import config from "./app/config/config";
 
-const port = 5000;
+const port = config.port;
 
 async function bootstrap() {
   try {
