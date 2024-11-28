@@ -21,6 +21,24 @@ const createCar = async (req: Request, res: Response)=>{
     }
 }
 
+const getAllCars = async (req: Request, res: Response)=>{
+    try{
+        const result = await CarService.getAllCars();
+        res.status(200).send({
+            success: true,
+            message: "Cars retrieved successfully",
+            data: result
+        });
+    }
+    catch(error){
+        res.status(500).send({
+            success: false,
+            message: "Something went wrong"
+        });
+    }
+}
+
 export const CarController = {
     createCar,
+    getAllCars,
 }
