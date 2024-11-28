@@ -1,7 +1,8 @@
+import mongoose from "mongoose";
 import { Car } from "./car.interface";
 import { CarModel } from "./car.model";
 
-const createCardIntoDB = async (car: Car) => {
+const createCarIntoDB = async (car: Car) => {
     const result = await CarModel.create(car);
     return result;
 };
@@ -11,8 +12,14 @@ const getAllCars = async () => {
     return result;
 };
 
+const getCarById = async (id: string) => {
+    const newId = new mongoose.Types.ObjectId(id);
+    const result = await CarModel.findById(newId);
+    return result;
+};
+
 export const CarService = {
-    createCardIntoDB,
+    createCarIntoDB,
     getAllCars,
-    
+    getCarById,
 }
