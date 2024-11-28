@@ -24,9 +24,16 @@ const updateCar = async (id: string ,updatedData: Partial<Car>) =>{
     return result;   
 }
 
+const deleteCar = async (id: string) => {
+    const newID = new mongoose.Types.ObjectId(id);
+    const result = await CarModel.findByIdAndDelete(newID, {new: true});
+    return result;
+}
+
 export const CarService = {
     createCarIntoDB,
     getAllCars,
     getCarById,
     updateCar,
+    deleteCar,
 }
