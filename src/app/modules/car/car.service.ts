@@ -18,8 +18,15 @@ const getCarById = async (id: string) => {
     return result;
 };
 
+const updateCar = async (id: string ,updatedData: Partial<Car>) =>{
+    const newID = new mongoose.Types.ObjectId(id);
+    const result = await CarModel.findByIdAndUpdate(newID, updatedData, {new: true});
+    return result;   
+}
+
 export const CarService = {
     createCarIntoDB,
     getAllCars,
     getCarById,
+    updateCar,
 }
