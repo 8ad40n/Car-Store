@@ -92,9 +92,7 @@ Ensure the following are installed on your system:
    npm run build
    ```
 
-# 🔄 API Endpoints
-
-### 🚘 Car Management
+## 🔄 API Endpoints
 
 ### **1. Create a Car**
 
